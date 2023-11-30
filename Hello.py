@@ -1,3 +1,4 @@
+pip install -r requirements.txt
 
 import streamlit as st
 from streamlit.logger import get_logger
