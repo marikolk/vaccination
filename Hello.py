@@ -5,21 +5,21 @@ from streamlit.logger import get_logger
 LOGGER = get_logger(__name__)
 
 import pandas as pd
-import io
+from io import BytesIO
 import requests
 import openpyxl
 
-# Replace <repository-url> with your GitHub repository URL
-repo_url = "https://github.com/marikolk/Vaccination"
+# URLs of the Excel files on GitHub (raw file URLs)
+url1 = "https://github.com/marikolk/Vaccination/main/citizens_angola_Bengo.xlsx"
 
-# Raw URL of the Excel file in the repository
-file_path = "citizens_angola_Bengo.xlsx"
-raw_url = f"{repo_url}/raw/main/{file_path}"
+# Function to read an Excel file from a URL
+def read_excel_from_url(url):
+    response = requests.get(url)
+    file = BytesIO(response.content)
+    return pd.read_excel(file)
 
-# Download the file from GitHub
-response = requests.get(raw_url)
-# Use openpyxl as the engine for reading Excel files
-df_citizens = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
+# Reading the files
+df_citizens = read_excel_from_url(url1)
 
 st.dataframe(df_citizens.head())
 
