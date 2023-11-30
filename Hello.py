@@ -6,7 +6,7 @@ LOGGER = get_logger(__name__)
 import pandas as pd
 import io
 import requests
-!pip install openpyxl 
+pip install openpyxl 
 
 # Replace <repository-url> with your GitHub repository URL
 repo_url = "https://github.com/marikolk/Vaccination"
