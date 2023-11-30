@@ -7,7 +7,6 @@ LOGGER = get_logger(__name__)
 import pandas as pd
 import io
 import requests
-import openpyxl
 
 # Replace <repository-url> with your GitHub repository URL
 repo_url = "https://github.com/marikolk/Vaccination"
@@ -20,6 +19,8 @@ raw_url = f"{repo_url}/raw/main/{file_path}"
 response = requests.get(raw_url)
 # Use openpyxl as the engine for reading Excel files
 df_citizens = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
+
+st.dataframe(df_citizens.head())
 
 def hospital_menu():
     st.write("\nHospital Menu:")
