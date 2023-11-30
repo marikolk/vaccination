@@ -15,7 +15,7 @@ url1 = "https://github.com/marikolk/Vaccination/raw/main/citizens_angola_Bengo.x
 def read_excel_from_url(url):
     response = requests.get(url)
     file = BytesIO(response.content)
-    return pd.read_excel(file, engine='openpyxl')
+    return pd.read_excel(file, engine='xlrd')
 
 # Reading the files
 df1 = read_excel_from_url(url1)
