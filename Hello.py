@@ -19,7 +19,7 @@ LOGGER = get_logger(__name__)
 
 def hospital_menu():
     st.write("\nHospital Menu:")
-      choice = st.selectbox("Select an option:", ["Get a Report", "Add a Patient", "Update Vaccine Status"])
+    choice = st.selectbox("Select an option:", ["Get a Report", "Add a Patient", "Update Vaccine Status"])
   
     if choice == "Get a Report":
         st.write("Hospital: Getting a report...")
