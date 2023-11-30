@@ -10,7 +10,7 @@ import requests
 
 
 # URLs of the Excel files on GitHub (raw file URLs)
-url1 = "https://github.com/marikolk/Vaccination/main/citizens_angola_Bengo.xlsx"
+url1 = "https://raw.githubusercontent.com/marikolk/Vaccination/main/citizens_angola_Bengo.xlsx"
 
 # Function to read an Excel file from a URL
 def read_excel_from_url(url):
