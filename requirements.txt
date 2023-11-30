@@ -3,5 +3,3 @@ numpy
 pandas
 pydeck
 streamlit
-openpyxl
-python==3.8.10
