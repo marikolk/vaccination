@@ -17,6 +17,29 @@ from streamlit.logger import get_logger
 
 LOGGER = get_logger(__name__)
 
+def hospital_menu():
+    st.write("\nHospital Menu:")
+      choice = st.selectbox("Select an option:", ["Get a Report", "Add a Patient", "Update Vaccine Status"])
+  
+    if choice == "Get a Report":
+        st.write("Hospital: Getting a report...")
+    elif choice == "Add a Patient":
+        st.write("Hospital: Adding a patient...")
+    elif choice == "Update Vaccine Status":
+        st.write("Hospital: Updating vaccine status...")
+  
+  
+def government_menu():
+    st.write("\nGovernment Menu:")
+    choice = st.selectbox("Select an option:", ["Add Citizens", "Distribute Vaccines", "Get Overall Report"])
+  
+    if choice == "Add Citizens":
+        st.write("Government: Adding citizens...")
+    elif choice == "Distribute Vaccines":
+        st.write("Government: Distributing vaccines...")
+    elif choice == "Get Overall Report":
+        st.write("Government: Getting overall report...")
+
 def run():
 
   st.title("Vaccination app")
@@ -39,28 +62,6 @@ def run():
           # Call the government_menu function
           government_menu()
   
-  def hospital_menu():
-      st.write("\nHospital Menu:")
-      choice = st.selectbox("Select an option:", ["Get a Report", "Add a Patient", "Update Vaccine Status"])
-  
-      if choice == "Get a Report":
-          st.write("Hospital: Getting a report...")
-      elif choice == "Add a Patient":
-          st.write("Hospital: Adding a patient...")
-      elif choice == "Update Vaccine Status":
-          st.write("Hospital: Updating vaccine status...")
-  
-  
-  def government_menu():
-      st.write("\nGovernment Menu:")
-      choice = st.selectbox("Select an option:", ["Add Citizens", "Distribute Vaccines", "Get Overall Report"])
-  
-      if choice == "Add Citizens":
-          st.write("Government: Adding citizens...")
-      elif choice == "Distribute Vaccines":
-          st.write("Government: Distributing vaccines...")
-      elif choice == "Get Overall Report":
-          st.write("Government: Getting overall report...")
 
 
 if __name__ == "__main__":
