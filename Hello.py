@@ -20,17 +20,16 @@ LOGGER = get_logger(__name__)
 
 def run():
   
-  streamlit run 
-      st.title("Vaccination app")
+  st.title("Vaccination app")
   
-      user_type = st.radio("Select your user type:", ["Hospital", "Government"])
+  user_type = st.radio("Select your user type:", ["Hospital", "Government"])
   
   
-      if user_type == "Hospital":
-          st.title("Hospital Vaccination App")
-      elif user_type == "Government":
-          st.title("Government Vaccination App")
-  
-      if __name__ == "__main__":
-          run()
+  if user_type == "Hospital":
+    st.title("Hospital Vaccination App")
+  elif user_type == "Government":
+    st.title("Government Vaccination App")
 
+if __name__ == "__main__":
+    run()
+  
