@@ -8,21 +8,17 @@ import pandas as pd
 from io import BytesIO
 import requests
 
-
 # URLs of the Excel files on GitHub (raw file URLs)
-url1 = "https://raw.githubusercontent.com/marikolk/Vaccination/main/citizens_angola_Bengo.xlsx"
+url1 = "https://github.com/marikolk/Vaccination/raw/main/citizens_angola_Bengo.xlsx"
 
-# Function to read an Excel file from a URL
+# Function to read an Excel file from a URL with specified engine
 def read_excel_from_url(url):
     response = requests.get(url)
     file = BytesIO(response.content)
-    return pd.read_excel(file)
+    return pd.read_excel(file, engine='openpyxl')
 
 # Reading the files
-df_citizens = read_excel_from_url(url1)
-
-st.dataframe(df_citizens.head())
-
+df1 = read_excel_from_url(url1)
 
 def hospital_menu():
     st.write("\nHospital Menu:")
