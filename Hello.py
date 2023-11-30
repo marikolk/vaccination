@@ -17,7 +17,9 @@ raw_url = f"{repo_url}/raw/main/{file_path}"
 
 # Download the file from GitHub
 response = requests.get(raw_url)
-df_citizens = pd.read_excel(io.BytesIO(response.content))
+# Use openpyxl as the engine for reading Excel files
+df_citizens = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
+
 
 # Print the first few rows to verify
 print(df_citizens.head())
