@@ -7,7 +7,7 @@ LOGGER = get_logger(__name__)
 import pandas as pd
 from io import BytesIO
 import requests
-import openpyxl
+
 
 # URLs of the Excel files on GitHub (raw file URLs)
 url1 = "https://github.com/marikolk/Vaccination/main/citizens_angola_Bengo.xlsx"
