@@ -1,3 +1,4 @@
+
 import streamlit as st
 from streamlit.logger import get_logger
 
@@ -19,10 +20,6 @@ raw_url = f"{repo_url}/raw/main/{file_path}"
 response = requests.get(raw_url)
 # Use openpyxl as the engine for reading Excel files
 df_citizens = pd.read_excel(io.BytesIO(response.content), engine='openpyxl')
-
-
-# Print the first few rows to verify
-st.write(df_citizens.head())
 
 def hospital_menu():
     st.write("\nHospital Menu:")
@@ -73,3 +70,6 @@ def run():
 
 if __name__ == "__main__":
     run()
+
+
+
